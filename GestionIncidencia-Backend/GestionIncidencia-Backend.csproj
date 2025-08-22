@@ -11,4 +11,9 @@
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GestionIncidencia.Application\GestionIncidencia.Application.csproj" />
+    <ProjectReference Include="..\GestionIncidencia.Infrastructure\GestionIncidencia.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

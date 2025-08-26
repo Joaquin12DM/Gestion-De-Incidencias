@@ -14,6 +14,9 @@ namespace GestionIncidencia_Backend.Controllers
         private readonly ComentarioService _comentarioService;
         private readonly IncidenciaService _incidenciaService;
 
+
+        //Aca al momento de comentar una incidencia, habra el boton de resolver y al comentar y enviar , automaticamnte cambiara el estado
+        //por Realizado
         [HttpPost("save")]
         public async Task<IActionResult> SaveComentario(ComentarioRequest comentarioRequest)
         {

@@ -26,6 +26,22 @@ namespace Incidencias.Infraestructura.Repositorio
                 .ToListAsync();
         }
 
+        public async Task<IEnumerable<Incidencia>> ListarIncidenciaNoResueltaAsync()
+        {
+            return await _context.Incidencias
+                .Include(i => i.Tecnico)
+                .Where(i => i.Estado != "Resuelta")
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Incidencia>> ListarIncidenciaResueltaAsync()
+        {
+            return await _context.Incidencias
+                .Include(i => i.Tecnico)
+                .Where(i => i.Estado == "Resuelta")
+                .ToListAsync();
+        }
+
         public async Task<Incidencia> ObtenerPorIdAsync(int id)
         {
             return await _context.Incidencias

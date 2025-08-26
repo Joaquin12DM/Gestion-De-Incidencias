@@ -47,9 +47,15 @@ namespace Incidencias.Aplicacion.Service
             return _repositorio.ActualizarAsync(incidencia);
         }
 
+        public async Task ActualizarEstadoResueltoAsync(int idIncidencia)
+        {
+            await _repositorio.ActualizarEstadoResueltoAsync(idIncidencia);
+        }
+
         public Task<IEnumerable<Incidencia>> ListarPorTecnicoAsync(int tecnicoId)
         {
             return _repositorio.ListarPorTecnicoAsync(tecnicoId);
         }
     }
 }
+

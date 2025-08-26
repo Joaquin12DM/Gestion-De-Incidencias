@@ -46,6 +46,8 @@ namespace GestionIncidencia_Backend.Controllers
             return Ok(IncidenciaMapper.ToResponse(incidencia));
         }
 
+       
+
 
     }
 }

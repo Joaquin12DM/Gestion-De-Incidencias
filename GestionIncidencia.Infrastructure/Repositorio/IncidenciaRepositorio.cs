@@ -61,6 +61,16 @@ namespace Incidencias.Infraestructura.Repositorio
             await _context.SaveChangesAsync();
         }
 
+        public async Task ActualizarEstadoResueltoAsync(int idIncidencia)
+        {
+            var incidencia = await _context.Incidencias.FirstOrDefaultAsync(i => i.IdIncidencia == idIncidencia);
+            if (incidencia != null)
+            {
+                incidencia.Estado = "Resuelto";
+                _context.SaveChanges();
+            }
+        }
+
         public async Task<IEnumerable<Incidencia>> ListarPorTecnicoAsync(int tecnicoId)
         {
             return await _context.Incidencias

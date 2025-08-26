@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestionIncidencia-Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f5e8a812cd23d5840b5f15a9430d9e532c00314c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e79143d03fc866700b7916ce8197ddcca56591b")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestionIncidencia-Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestionIncidencia-Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

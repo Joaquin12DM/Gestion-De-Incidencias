@@ -24,6 +24,21 @@ namespace GestionIncidencia_Backend.Controllers
             return Ok(IncidenciaMapper.ToResponseList(incidencias));
         }
 
+        [HttpGet("listaIncidenciasNoResueltas")]
+        public async Task<IActionResult> ListaIncidenciasNoResueltas()
+        {
+            var incidencias = await incidenciaService.ListarNoResueltaAsync();
+            return Ok(IncidenciaMapper.ToResponseList(incidencias));
+        }
+
+
+        [HttpGet("listaIncidenciasResueltas")]
+        public async Task<IActionResult> ListaIncidenciasResueltas()
+        {
+            var incidencias = await incidenciaService.ListarResueltaAsync();
+            return Ok(IncidenciaMapper.ToResponseList(incidencias));
+        }
+
         [HttpGet("findById")]
         public async Task<IActionResult> IncidenciaById(int id)
         {

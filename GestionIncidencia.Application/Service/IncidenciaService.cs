@@ -22,6 +22,16 @@ namespace Incidencias.Aplicacion.Service
             return _repositorio.ListarIncidenciaAsync();
         }
 
+        public Task<IEnumerable<Incidencia>> ListarNoResueltaAsync()
+        {
+            return _repositorio.ListarIncidenciaNoResueltaAsync();
+        }
+
+        public Task<IEnumerable<Incidencia>> ListarResueltaAsync()
+        {
+            return _repositorio.ListarIncidenciaResueltaAsync();
+        }
+
         public Task<Incidencia> ObtenerPorIdAsync(int id)
         {
             return _repositorio.ObtenerPorIdAsync(id);

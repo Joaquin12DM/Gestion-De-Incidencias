@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionIncidencia.Infrastructure.Migrations
 {
     [DbContext(typeof(IncidenciasDbContext))]
-    [Migration("20250826080959_migracion")]
+    [Migration("20250826090040_migracion")]
     partial class migracion
     {
         /// <inheritdoc />
@@ -47,6 +47,10 @@ namespace GestionIncidencia.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdAlumno"));
+
+                    b.Property<string>("Dni")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("FechaNacimiento")
                         .HasColumnType("datetime2");

@@ -9,6 +9,7 @@ namespace Incidencias.Dominio.Entidades
     public class Alumno
     {
         public int IdAlumno { get; set; }
+        public string Dni {  get; set; }
         public string NombreCompleto { get; set; }
         public string Grado { get; set; }
         public DateTime FechaNacimiento { get; set; }

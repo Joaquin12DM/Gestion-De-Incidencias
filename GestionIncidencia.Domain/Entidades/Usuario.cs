@@ -1,9 +1,10 @@
-﻿using Incidencias.Dominio.Enun;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GestionIncidencia.Domain.Entidades;
+using Incidencias.Dominio.Enun;
 
 namespace Incidencias.Dominio.Entidades
 {
@@ -11,24 +12,12 @@ namespace Incidencias.Dominio.Entidades
     {
         public int IdUsuario { get; set; }
         public string NombreUsuario { get; set; }
-        public string ContrasenaHash { get; set; }
-        public string Apellidos { get; set; }
-        public string DNI { get; set; }
-        public string Email { get; set; }
+        public string Password { get; set; }
         public RolUsuario Rol { get; set; }
-        public DateTime FechaCreacion { get; set; }
 
-        public int InstitucionId { get; set; }
-        public Institucion Institucion { get; set; }
-
-        // Relación con incidencias creadas (docente)
-        public ICollection<Incidencia> IncidenciasCreadas { get; set; }
-
-        // Relación con incidencias asignadas (técnico)
-        public ICollection<Incidencia> IncidenciasAsignadas { get; set; }
-
-        // Relación con incidencias asignadas (Alunmo)
-        public ICollection<Incidencia> Incidencias { get; set; }
+        public ICollection<Alumno> Alumnos { get; set; } = new List<Alumno>();
+        public ICollection<Docente> Docentes { get; set; } = new List<Docente>();
+        public ICollection<Soporte> Soportes { get; set; } = new List<Soporte>();
 
 
     }

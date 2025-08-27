@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Incidencias.Aplicacion.DTO
+namespace GestionIncidencia.Application.DTO.Response
 {
     public class LoginResponse
     {

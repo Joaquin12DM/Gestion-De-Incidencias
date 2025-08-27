@@ -3,32 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GestionIncidencia.Domain.Entidades;
 
 namespace Incidencias.Dominio.Entidades
 {
     public class Incidencia
     {
         public int IdIncidencia { get; set; }
-        public string Titulo { get; set; }
+        public string Tipo { get; set; }
         public string Descripcion { get; set; }
         public string Estado { get; set; }
-        public string Prioridad { get; set; }
-        public string Tipo { get; set; }
-        public DateTime FechaCreacion { get; set; }
-        public DateTime FechaActualizacion { get; set; }
+        public DateTime FechaCreacion { get; set; } = DateTime.Now;
 
-        // Relación con Alumnos (opcional)
-        public ICollection<Usuario> Alumnos { get; set; }  // <-- Muchos alumnos
+        // Usuario (Docente / quien crea la incidencia)
+        public int UsuarioId { get; set; }
+        public Usuario Usuario { get; set; }
 
-        // Usuario que crea la incidencia (Docente)
-        public int DocenteId { get; set; }
-        public Usuario Docente { get; set; }
-
-        // Usuario técnico que atiende la incidencia (puede ser null si aún no asignan técnico)
-        public int? TecnicoId { get; set; }
-        public Usuario Tecnico { get; set; }
-
-        // Relación con Comentarios
-        public ICollection<Comentario> Comentarios { get; set; }
+        // Relación opcional con un Alumno
+        public int? AlumnoId { get; set; }
+        public Alumno Alumno { get; set; }
     }
 }

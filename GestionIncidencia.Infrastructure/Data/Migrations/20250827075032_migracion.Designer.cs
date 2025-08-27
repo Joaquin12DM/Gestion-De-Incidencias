@@ -4,6 +4,7 @@ using Incidencias.Infraestructura.Data.Dbcontext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionIncidencia.Infrastructure.Migrations
 {
     [DbContext(typeof(IncidenciasDbContext))]
-    partial class IncidenciasDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250827075032_migracion")]
+    partial class migracion
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -154,9 +157,6 @@ namespace GestionIncidencia.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdIncidencia"));
 
-                    b.Property<int?>("AlumnoId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Descripcion")
                         .IsRequired()
                         .HasMaxLength(500)
@@ -179,8 +179,6 @@ namespace GestionIncidencia.Infrastructure.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("IdIncidencia");
-
-                    b.HasIndex("AlumnoId");
 
                     b.HasIndex("UsuarioId");
 
@@ -248,17 +246,11 @@ namespace GestionIncidencia.Infrastructure.Migrations
 
             modelBuilder.Entity("Incidencias.Dominio.Entidades.Incidencia", b =>
                 {
-                    b.HasOne("GestionIncidencia.Domain.Entidades.Alumno", "Alumno")
-                        .WithMany()
-                        .HasForeignKey("AlumnoId");
-
                     b.HasOne("Incidencias.Dominio.Entidades.Usuario", "Usuario")
                         .WithMany()
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Alumno");
 
                     b.Navigation("Usuario");
                 });

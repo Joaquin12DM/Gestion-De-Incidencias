@@ -17,9 +17,9 @@ namespace Incidencias.Aplicacion.Service
             _repositorio = repositorio;
         }
 
-        public Task<Usuario?> ValidarCredencialesAsync(string email, string contrasenaHash)
+        public Task<Usuario?> ValidarCredencialesAsync(string username, string contrasena)
         {
-            return _repositorio.ObtenerCredencialesAsync(email, contrasenaHash);
+            return _repositorio.ObtenerCredencialesAsync(username, contrasena);
         }
 
        

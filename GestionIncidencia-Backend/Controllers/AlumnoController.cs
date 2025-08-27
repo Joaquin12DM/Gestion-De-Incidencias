@@ -1,5 +1,8 @@
 ﻿using Incidencias.Aplicacion.Service;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+using GestionIncidencia.Application.DTO.Request;
+using GestionIncidencia.Application.Mapper;
 
 namespace GestionIncidencia_Backend.Controllers
 {
@@ -14,19 +17,36 @@ namespace GestionIncidencia_Backend.Controllers
             _alumnoService = alumnoService;
         }
 
-        // GET api/usuario/alumno/{dni}
-        [HttpGet("alumno/{id}")]
-        public async Task<IActionResult> ObtenerAlumnoPorDni(int id)
+        // GET api/alumno/{idAlumno}
+        [HttpGet("{idAlumno:int}")]
+        public async Task<IActionResult> ObtenerPorId(int idAlumno)
         {
-            if (id <= 0)
-                return BadRequest("DNI inválido");
+            if (idAlumno <= 0)
+                return BadRequest("Id inválido");
 
-            var alumnos = await _alumnoService.Alumno(id);
+            var alumno = await _alumnoService.ObtenerPorIdAsync(idAlumno);
+            if (alumno == null) return NotFound();
 
-            if (alumnos == null || !alumnos.Any())
-                return NotFound("No se encontró ningún alumno con ese DNI");
+            return Ok(AlumnoMapper.ToResponse(alumno));
+        }
 
-            return Ok(alumnos);
+        // GET api/alumno/listar
+        [HttpGet("listar")]
+        public async Task<IActionResult> ListarTodos()
+        {
+            var lista = await _alumnoService.ListarTodosAsync();
+            return Ok(AlumnoMapper.ToResponseList(lista));
+        }
+
+        // GET api/alumno/por-grado?grado=X
+        [HttpGet("por-grado")]
+        public async Task<IActionResult> ListarPorGrado([FromQuery] AlumnoFiltroRequest filtro)
+        {
+            if (filtro == null || string.IsNullOrWhiteSpace(filtro.Grado))
+                return BadRequest("Grado requerido");
+
+            var lista = await _alumnoService.ListarPorGradoAsync(filtro.Grado);
+            return Ok(AlumnoMapper.ToResponseList(lista));
         }
     }
 }

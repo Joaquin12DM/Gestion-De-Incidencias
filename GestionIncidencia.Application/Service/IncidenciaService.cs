@@ -2,8 +2,6 @@
 using Incidencias.Dominio.IRepositorio;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Incidencias.Aplicacion.Service
@@ -17,45 +15,15 @@ namespace Incidencias.Aplicacion.Service
             _repositorio = repositorio;
         }
 
-        public Task<IEnumerable<Incidencia>> ListarAsync()
-        {
-            return _repositorio.ListarIncidenciaAsync();
-        }
-
-        public Task<IEnumerable<Incidencia>> ListarNoResueltaAsync()
-        {
-            return _repositorio.ListarIncidenciaNoResueltaAsync();
-        }
-
-        public Task<IEnumerable<Incidencia>> ListarResueltaAsync()
-        {
-            return _repositorio.ListarIncidenciaResueltaAsync();
-        }
-
-        public Task<Incidencia> ObtenerPorIdAsync(int id)
-        {
-            return _repositorio.ObtenerPorIdAsync(id);
-        }
-
-        public Task AgregarAsync(Incidencia incidencia)
-        {
-            return _repositorio.AgregarAsync(incidencia);
-        }
-
-        public Task ActualizarAsync(Incidencia incidencia)
-        {
-            return _repositorio.ActualizarAsync(incidencia);
-        }
-
-        public async Task ActualizarEstadoResueltoAsync(int idIncidencia)
-        {
-            await _repositorio.ActualizarEstadoResueltoAsync(idIncidencia);
-        }
-
-        public Task<IEnumerable<Incidencia>> ListarPorTecnicoAsync(int tecnicoId)
-        {
-            return _repositorio.ListarPorTecnicoAsync(tecnicoId);
-        }
+        public Task<IEnumerable<Incidencia>> ListarAsync() => _repositorio.ListarIncidenciaAsync();
+        public Task<IEnumerable<Incidencia>> ListarNoResueltaAsync() => _repositorio.ListarIncidenciaNoResueltaAsync();
+        public Task<IEnumerable<Incidencia>> ListarResueltaAsync() => _repositorio.ListarIncidenciaResueltaAsync();
+        public Task<IEnumerable<Incidencia>> ListarPorFechaCreacionAsync(DateTime inicio, DateTime? fin = null) => _repositorio.ListarPorFechaCreacionAsync(inicio, fin);
+        public Task<Incidencia> ObtenerPorIdAsync(int id) => _repositorio.ObtenerPorIdAsync(id);
+        public Task AgregarAsync(Incidencia incidencia) => _repositorio.AgregarAsync(incidencia);
+        public Task ActualizarAsync(Incidencia incidencia) => _repositorio.ActualizarAsync(incidencia);
+        public Task ActualizarEstadoResueltoAsync(int idIncidencia) => _repositorio.ActualizarEstadoResueltoAsync(idIncidencia);
+        public Task<IEnumerable<AlumnoIncidenciaCount>> TopAlumnosConMasIncidenciasAsync(int top = 3) => _repositorio.TopAlumnosConMasIncidenciasAsync(top);
     }
 }
 

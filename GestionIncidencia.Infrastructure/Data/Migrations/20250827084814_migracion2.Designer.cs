@@ -4,6 +4,7 @@ using Incidencias.Infraestructura.Data.Dbcontext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionIncidencia.Infrastructure.Migrations
 {
     [DbContext(typeof(IncidenciasDbContext))]
-    partial class IncidenciasDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250827084814_migracion2")]
+    partial class migracion2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

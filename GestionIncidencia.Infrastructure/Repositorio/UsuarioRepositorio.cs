@@ -19,10 +19,14 @@ namespace Incidencias.Infraestructura.Repositorio
             _context = context;
         }
 
-        public async Task<Usuario?> ObtenerCredencialesAsync(string email, string contrasenaHash)
+        public async Task<Usuario?> ObtenerCredencialesAsync(string username, string contrasena)
         {
             return await _context.Usuarios
-                .FirstOrDefaultAsync(u => u.Email == email && u.ContrasenaHash == contrasenaHash);
+                .Include(u => u.Alumnos)
+                .Include(u => u.Docentes)
+                .Include(u => u.Soportes)
+                .FirstOrDefaultAsync(p => p.NombreUsuario == username && p.Password == contrasena);
         }
+
     }
 }

@@ -9,9 +9,9 @@ namespace Incidencias.Dominio.Enun
     public enum RolUsuario
     {
         
-        Tecnico = 1,
+        Soporte = 3,
         Docente= 2,
-        Alumno = 3
+        Alumno = 1
 
 
     }

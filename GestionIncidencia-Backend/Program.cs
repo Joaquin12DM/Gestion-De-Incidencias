@@ -14,8 +14,15 @@ builder.Services.AddDbContext<IncidenciasDbContext>(options =>
 // Add services to the container.
 builder.Services.AddControllers();
 
+// Repositorios
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+builder.Services.AddScoped<IIncidenciaRepositorio, IncidenciaRepositorio>();
+builder.Services.AddScoped<IAlumnoRepositorio, AlumnoRepositorio>(); // registro alumno
+
+// Servicios de aplicación
 builder.Services.AddScoped<UsuarioService>();
+builder.Services.AddScoped<IncidenciaService>();
+builder.Services.AddScoped<AlumnoService>(); // servicio alumno
 
 // Swagger/OpenAPI configuration
 builder.Services.AddEndpointsApiExplorer();

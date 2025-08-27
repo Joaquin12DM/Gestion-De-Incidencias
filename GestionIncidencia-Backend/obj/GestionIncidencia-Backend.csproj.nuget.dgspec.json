@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia-Backend\\GestionIncidencia-Backend.csproj": {}
+    "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia-Backend\\GestionIncidencia-Backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia-Backend\\GestionIncidencia-Backend.csproj": {
+    "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia-Backend\\GestionIncidencia-Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia-Backend\\GestionIncidencia-Backend.csproj",
+        "projectUniqueName": "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia-Backend\\GestionIncidencia-Backend.csproj",
         "projectName": "GestionIncidencia-Backend",
-        "projectPath": "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia-Backend\\GestionIncidencia-Backend.csproj",
-        "packagesPath": "C:\\Users\\davil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia-Backend\\obj\\",
+        "projectPath": "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia-Backend\\GestionIncidencia-Backend.csproj",
+        "packagesPath": "C:\\Users\\joaqu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia-Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\davil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\joaqu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,20 +26,20 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://www.nuget.org/api/v2/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Application\\GestionIncidencia.Application.csproj": {
-                "projectPath": "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Application\\GestionIncidencia.Application.csproj"
+              "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Application\\GestionIncidencia.Application.csproj": {
+                "projectPath": "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Application\\GestionIncidencia.Application.csproj"
               },
-              "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\GestionIncidencia.Domain.csproj": {
-                "projectPath": "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\GestionIncidencia.Domain.csproj"
+              "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\GestionIncidencia.Domain.csproj": {
+                "projectPath": "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\GestionIncidencia.Domain.csproj"
               },
-              "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Infrastructure\\GestionIncidencia.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Infrastructure\\GestionIncidencia.Infrastructure.csproj"
+              "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Infrastructure\\GestionIncidencia.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Infrastructure\\GestionIncidencia.Infrastructure.csproj"
               }
             }
           }
@@ -54,7 +54,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -102,24 +102,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Application\\GestionIncidencia.Application.csproj": {
+    "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Application\\GestionIncidencia.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Application\\GestionIncidencia.Application.csproj",
+        "projectUniqueName": "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Application\\GestionIncidencia.Application.csproj",
         "projectName": "GestionIncidencia.Application",
-        "projectPath": "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Application\\GestionIncidencia.Application.csproj",
-        "packagesPath": "C:\\Users\\davil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Application\\obj\\",
+        "projectPath": "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Application\\GestionIncidencia.Application.csproj",
+        "packagesPath": "C:\\Users\\joaqu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\davil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\joaqu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -128,14 +128,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://www.nuget.org/api/v2/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\GestionIncidencia.Domain.csproj": {
-                "projectPath": "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\GestionIncidencia.Domain.csproj"
+              "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\GestionIncidencia.Domain.csproj": {
+                "projectPath": "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\GestionIncidencia.Domain.csproj"
               }
             }
           }
@@ -150,7 +150,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -171,24 +171,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\GestionIncidencia.Domain.csproj": {
+    "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\GestionIncidencia.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\GestionIncidencia.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\GestionIncidencia.Domain.csproj",
         "projectName": "GestionIncidencia.Domain",
-        "projectPath": "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\GestionIncidencia.Domain.csproj",
-        "packagesPath": "C:\\Users\\davil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\obj\\",
+        "projectPath": "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\GestionIncidencia.Domain.csproj",
+        "packagesPath": "C:\\Users\\joaqu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\davil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\joaqu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -197,7 +197,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://www.nuget.org/api/v2/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
@@ -215,7 +215,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -236,24 +236,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Infrastructure\\GestionIncidencia.Infrastructure.csproj": {
+    "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Infrastructure\\GestionIncidencia.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Infrastructure\\GestionIncidencia.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Infrastructure\\GestionIncidencia.Infrastructure.csproj",
         "projectName": "GestionIncidencia.Infrastructure",
-        "projectPath": "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Infrastructure\\GestionIncidencia.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\davil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Infrastructure\\GestionIncidencia.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\joaqu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\davil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\joaqu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -262,17 +262,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://www.nuget.org/api/v2/": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Application\\GestionIncidencia.Application.csproj": {
-                "projectPath": "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Application\\GestionIncidencia.Application.csproj"
+              "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Application\\GestionIncidencia.Application.csproj": {
+                "projectPath": "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Application\\GestionIncidencia.Application.csproj"
               },
-              "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\GestionIncidencia.Domain.csproj": {
-                "projectPath": "C:\\Users\\davil\\Documents\\Nueva carpeta\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\GestionIncidencia.Domain.csproj"
+              "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\GestionIncidencia.Domain.csproj": {
+                "projectPath": "C:\\Users\\joaqu\\Desktop\\SistemaGestionHotel\\Gestion-De-Incidencias\\GestionIncidencia.Domain\\GestionIncidencia.Domain.csproj"
               }
             }
           }
@@ -287,7 +287,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -330,7 +330,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

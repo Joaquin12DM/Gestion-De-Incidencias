@@ -9,6 +9,8 @@ namespace Incidencias.Dominio.IRepositorio
 {
     public interface IUsuarioRepositorio
     {
-        Task<Usuario?> ObtenerCredencialesAsync(string email, string contrasenaHash);
+        Task<Usuario?> ObtenerCredencialesAsync(string username, string contrasena);
+
+        
     }
 }

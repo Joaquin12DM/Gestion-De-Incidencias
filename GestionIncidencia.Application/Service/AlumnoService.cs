@@ -1,10 +1,7 @@
 ﻿using Incidencias.Dominio.Entidades;
 using Incidencias.Dominio.Enun;
 using Incidencias.Dominio.IRepositorio;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Incidencias.Aplicacion.Service
@@ -24,6 +21,8 @@ namespace Incidencias.Aplicacion.Service
             return _repositorio.Alumno(id, rol);
         }
 
-
+        public Task<IEnumerable<GestionIncidencia.Domain.Entidades.Alumno>> ListarTodosAsync() => _repositorio.ListarTodosAsync();
+        public Task<IEnumerable<GestionIncidencia.Domain.Entidades.Alumno>> ListarPorGradoAsync(string grado) => _repositorio.ListarPorGradoAsync(grado);
+        public Task<GestionIncidencia.Domain.Entidades.Alumno> ObtenerPorIdAsync(int idAlumno) => _repositorio.ObtenerPorIdAsync(idAlumno);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Incidencias.Dominio.Entidades;
+using Incidencias.Dominio.Enun;
 using Incidencias.Dominio.IRepositorio;
 using System;
 using System.Collections.Generic;
@@ -17,9 +18,10 @@ namespace Incidencias.Aplicacion.Service
             _repositorio = repositorio;
         }
 
-        public Task<IEnumerable<Alumno>> ListarPorInstitucionAsync(int institucionId)
+        public Task<IEnumerable<Usuario>> Alumno(int id)
         {
-            return _repositorio.AlumnoInstitucion(institucionId);
+            var rol = RolUsuario.Alumno;
+            return _repositorio.Alumno(id, rol);
         }
 
 

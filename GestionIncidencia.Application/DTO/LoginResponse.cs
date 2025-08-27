@@ -9,6 +9,7 @@ namespace Incidencias.Aplicacion.DTO
 {
     public class LoginResponse
     {
+        public int IdUsuario { get; set; }
         public string NombreUsuario { get; set; }
         public string Apellidos { get; set; }
         public string DNI { get; set; }

@@ -1,4 +1,5 @@
 ﻿using Incidencias.Dominio.Entidades;
+using Incidencias.Dominio.Enun;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Incidencias.Dominio.IRepositorio
 {
     public interface IAlumnoRepositorio
     {
-        Task<IEnumerable<Alumno>> AlumnoInstitucion(int institucionId);
+        Task<IEnumerable<Usuario>> Alumno(int id, RolUsuario rol);
     }
 }

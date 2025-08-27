@@ -24,4 +24,8 @@
     <ProjectReference Include="..\GestionIncidencia.Domain\GestionIncidencia.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\Migrations\" />
+  </ItemGroup>
+
 </Project>

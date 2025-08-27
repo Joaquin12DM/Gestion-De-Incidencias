@@ -18,7 +18,8 @@ namespace Incidencias.Dominio.Entidades
         public DateTime FechaActualizacion { get; set; }
 
         // Relación con Alumnos (opcional)
-        public ICollection<Alumno>? Alumnos { get; set; }
+        public ICollection<Usuario> Alumnos { get; set; }  // <-- Muchos alumnos
+
         // Usuario que crea la incidencia (Docente)
         public int DocenteId { get; set; }
         public Usuario Docente { get; set; }

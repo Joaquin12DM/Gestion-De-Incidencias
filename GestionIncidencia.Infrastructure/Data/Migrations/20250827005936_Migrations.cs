@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace GestionIncidencia.Infrastructure.Migrations
+namespace GestionIncidencia.Infrastructure.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class migracion : Migration
+    public partial class Migrations : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -25,29 +25,6 @@ namespace GestionIncidencia.Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Instituciones", x => x.IdInstitucion);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Alumnos",
-                columns: table => new
-                {
-                    IdAlumno = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Dni = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    NombreCompleto = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Grado = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FechaNacimiento = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    InstitucionId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Alumnos", x => x.IdAlumno);
-                    table.ForeignKey(
-                        name: "FK_Alumnos_Instituciones_InstitucionId",
-                        column: x => x.InstitucionId,
-                        principalTable: "Instituciones",
-                        principalColumn: "IdInstitucion",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -100,36 +77,13 @@ namespace GestionIncidencia.Infrastructure.Migrations
                         column: x => x.DocenteId,
                         principalTable: "Usuarios",
                         principalColumn: "IdUsuario",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Incidencias_Usuarios_TecnicoId",
                         column: x => x.TecnicoId,
                         principalTable: "Usuarios",
-                        principalColumn: "IdUsuario");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AlumnoIncidencia",
-                columns: table => new
-                {
-                    AlumnoId = table.Column<int>(type: "int", nullable: false),
-                    IncidenciaId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AlumnoIncidencia", x => new { x.AlumnoId, x.IncidenciaId });
-                    table.ForeignKey(
-                        name: "FK_AlumnoIncidencia_Alumnos_AlumnoId",
-                        column: x => x.AlumnoId,
-                        principalTable: "Alumnos",
-                        principalColumn: "IdAlumno",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_AlumnoIncidencia_Incidencias_IncidenciaId",
-                        column: x => x.IncidenciaId,
-                        principalTable: "Incidencias",
-                        principalColumn: "IdIncidencia",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "IdUsuario",
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateTable(
@@ -153,20 +107,39 @@ namespace GestionIncidencia.Infrastructure.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateIndex(
-                name: "IX_AlumnoIncidencia_IncidenciaId",
-                table: "AlumnoIncidencia",
-                column: "IncidenciaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Alumnos_InstitucionId",
-                table: "Alumnos",
-                column: "InstitucionId");
+            migrationBuilder.CreateTable(
+                name: "IncidenciaAlumno",
+                columns: table => new
+                {
+                    AlumnosIdUsuario = table.Column<int>(type: "int", nullable: false),
+                    IncidenciasIdIncidencia = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_IncidenciaAlumno", x => new { x.AlumnosIdUsuario, x.IncidenciasIdIncidencia });
+                    table.ForeignKey(
+                        name: "FK_IncidenciaAlumno_Incidencias_IncidenciasIdIncidencia",
+                        column: x => x.IncidenciasIdIncidencia,
+                        principalTable: "Incidencias",
+                        principalColumn: "IdIncidencia",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_IncidenciaAlumno_Usuarios_AlumnosIdUsuario",
+                        column: x => x.AlumnosIdUsuario,
+                        principalTable: "Usuarios",
+                        principalColumn: "IdUsuario",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comentarios_IncidenciaId",
                 table: "Comentarios",
                 column: "IncidenciaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_IncidenciaAlumno_IncidenciasIdIncidencia",
+                table: "IncidenciaAlumno",
+                column: "IncidenciasIdIncidencia");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Incidencias_DocenteId",
@@ -188,13 +161,10 @@ namespace GestionIncidencia.Infrastructure.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AlumnoIncidencia");
-
-            migrationBuilder.DropTable(
                 name: "Comentarios");
 
             migrationBuilder.DropTable(
-                name: "Alumnos");
+                name: "IncidenciaAlumno");
 
             migrationBuilder.DropTable(
                 name: "Incidencias");

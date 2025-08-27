@@ -1,4 +1,5 @@
 ﻿using Incidencias.Dominio.Entidades;
+using Incidencias.Dominio.Enun;
 using Incidencias.Dominio.IRepositorio;
 using Incidencias.Infraestructura.Data.Dbcontext;
 using Microsoft.EntityFrameworkCore;
@@ -19,10 +20,10 @@ namespace Incidencias.Infraestructura.Repositorio
             _context = context;
         }
 
-        public async Task<IEnumerable<Alumno>> AlumnoInstitucion(int institucionId)
+        public async Task<IEnumerable<Usuario>> Alumno(int id,RolUsuario rol)
         {
-            return await _context.Alumnos
-                .Where(a => a.InstitucionId == institucionId)
+            return await _context.Usuarios
+                .Where(a => a.IdUsuario == id && a.Rol == rol)
                 .ToListAsync();
         }
     }

@@ -28,6 +28,11 @@ namespace Incidencias.Infraestructura.Data.Conficguracion
             builder.HasMany(u => u.IncidenciasAsignadas)
                    .WithOne(i => i.Tecnico)
                    .HasForeignKey(i => i.TecnicoId);
+            // Usuario (Alumno) ↔ Incidencias (N:N)
+            builder.HasMany(u => u.Incidencias)
+                   .WithMany(i => i.Alumnos)
+                   .UsingEntity(j => j.ToTable("IncidenciaAlumno")); // tabla de unión implícita
+
         }
     }
 }

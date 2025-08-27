@@ -29,6 +29,7 @@ namespace Gestion_Incidencias.Controllers
 
             var response = new LoginResponse
             {
+                IdUsuario = user.IdUsuario,
                 NombreUsuario = user.NombreUsuario,
                 Email = user.Email,
                 Rol = user.Rol.ToString()

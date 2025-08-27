@@ -26,6 +26,11 @@ namespace Incidencias.Dominio.Entidades
 
         // Relación con incidencias asignadas (técnico)
         public ICollection<Incidencia> IncidenciasAsignadas { get; set; }
+
+        // Relación con incidencias asignadas (Alunmo)
+        public ICollection<Incidencia> Incidencias { get; set; }
+
+
     }
 
 }

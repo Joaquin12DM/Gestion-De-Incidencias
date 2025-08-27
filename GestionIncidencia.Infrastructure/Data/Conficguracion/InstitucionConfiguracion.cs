@@ -14,10 +14,7 @@ namespace Incidencias.Infraestructura.Data.Conficguracion
         public void Configure(EntityTypeBuilder<Institucion> builder)
         {
             builder.HasKey(i => i.IdInstitucion);
-            // Institucion ↔ Alumno (1:N)
-            builder.HasMany(i => i.Alumnos)
-                   .WithOne(a => a.Institucion)
-                   .HasForeignKey(a => a.InstitucionId);
+            
 
             // Institucion ↔ Usuario (1:N)
             builder.HasMany(i => i.Usuarios)

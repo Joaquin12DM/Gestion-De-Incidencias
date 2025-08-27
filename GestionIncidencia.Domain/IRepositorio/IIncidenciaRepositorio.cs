@@ -13,7 +13,6 @@ namespace Incidencias.Dominio.IRepositorio
         Task<IEnumerable<Incidencia>> ListarIncidenciaNoResueltaAsync();
         Task<IEnumerable<Incidencia>> ListarIncidenciaResueltaAsync();
         Task<Incidencia> ObtenerPorIdAsync(int id);
-        public void ActualizarEstadoResuelto(int idIncidencia);
         Task AgregarAsync(Incidencia incidencia);
         Task ActualizarAsync(Incidencia incidencia);
         Task<IEnumerable<Incidencia>> ListarPorTecnicoAsync(int tecnicoId);

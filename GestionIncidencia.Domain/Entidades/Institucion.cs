@@ -14,7 +14,6 @@ namespace Incidencias.Dominio.Entidades
         public string Contacto { get; set; }
         public DateTime FechaCreacion { get; set; }
 
-        public ICollection<Alumno> Alumnos { get; set; }
         public ICollection<Usuario> Usuarios { get; set; }
     }
 }

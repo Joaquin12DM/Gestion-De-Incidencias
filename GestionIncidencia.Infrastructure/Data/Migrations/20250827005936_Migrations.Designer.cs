@@ -9,11 +9,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace GestionIncidencia.Infrastructure.Migrations
+namespace GestionIncidencia.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(IncidenciasDbContext))]
-    [Migration("20250826090040_migracion")]
-    partial class migracion
+    [Migration("20250827005936_Migrations")]
+    partial class Migrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,52 +25,19 @@ namespace GestionIncidencia.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("AlumnoIncidencia", b =>
+            modelBuilder.Entity("IncidenciaUsuario", b =>
                 {
-                    b.Property<int>("AlumnoId")
+                    b.Property<int>("AlumnosIdUsuario")
                         .HasColumnType("int");
 
-                    b.Property<int>("IncidenciaId")
+                    b.Property<int>("IncidenciasIdIncidencia")
                         .HasColumnType("int");
 
-                    b.HasKey("AlumnoId", "IncidenciaId");
+                    b.HasKey("AlumnosIdUsuario", "IncidenciasIdIncidencia");
 
-                    b.HasIndex("IncidenciaId");
+                    b.HasIndex("IncidenciasIdIncidencia");
 
-                    b.ToTable("AlumnoIncidencia");
-                });
-
-            modelBuilder.Entity("Incidencias.Dominio.Entidades.Alumno", b =>
-                {
-                    b.Property<int>("IdAlumno")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdAlumno"));
-
-                    b.Property<string>("Dni")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("FechaNacimiento")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Grado")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("InstitucionId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("NombreCompleto")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("IdAlumno");
-
-                    b.HasIndex("InstitucionId");
-
-                    b.ToTable("Alumnos");
+                    b.ToTable("IncidenciaAlumno", (string)null);
                 });
 
             modelBuilder.Entity("Incidencias.Dominio.Entidades.Comentario", b =>
@@ -219,30 +186,19 @@ namespace GestionIncidencia.Infrastructure.Migrations
                     b.ToTable("Usuarios");
                 });
 
-            modelBuilder.Entity("AlumnoIncidencia", b =>
+            modelBuilder.Entity("IncidenciaUsuario", b =>
                 {
-                    b.HasOne("Incidencias.Dominio.Entidades.Alumno", null)
+                    b.HasOne("Incidencias.Dominio.Entidades.Usuario", null)
                         .WithMany()
-                        .HasForeignKey("AlumnoId")
+                        .HasForeignKey("AlumnosIdUsuario")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Incidencias.Dominio.Entidades.Incidencia", null)
                         .WithMany()
-                        .HasForeignKey("IncidenciaId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Incidencias.Dominio.Entidades.Alumno", b =>
-                {
-                    b.HasOne("Incidencias.Dominio.Entidades.Institucion", "Institucion")
-                        .WithMany("Alumnos")
-                        .HasForeignKey("InstitucionId")
+                        .HasForeignKey("IncidenciasIdIncidencia")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Institucion");
                 });
 
             modelBuilder.Entity("Incidencias.Dominio.Entidades.Comentario", b =>
@@ -261,12 +217,13 @@ namespace GestionIncidencia.Infrastructure.Migrations
                     b.HasOne("Incidencias.Dominio.Entidades.Usuario", "Docente")
                         .WithMany("IncidenciasCreadas")
                         .HasForeignKey("DocenteId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Incidencias.Dominio.Entidades.Usuario", "Tecnico")
                         .WithMany("IncidenciasAsignadas")
-                        .HasForeignKey("TecnicoId");
+                        .HasForeignKey("TecnicoId")
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Docente");
 
@@ -291,8 +248,6 @@ namespace GestionIncidencia.Infrastructure.Migrations
 
             modelBuilder.Entity("Incidencias.Dominio.Entidades.Institucion", b =>
                 {
-                    b.Navigation("Alumnos");
-
                     b.Navigation("Usuarios");
                 });
 

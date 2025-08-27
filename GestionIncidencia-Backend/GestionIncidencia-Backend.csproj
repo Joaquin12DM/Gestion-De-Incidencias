@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GestionIncidencia.Application\GestionIncidencia.Application.csproj" />
+    <ProjectReference Include="..\GestionIncidencia.Domain\GestionIncidencia.Domain.csproj" />
     <ProjectReference Include="..\GestionIncidencia.Infrastructure\GestionIncidencia.Infrastructure.csproj" />
   </ItemGroup>
 

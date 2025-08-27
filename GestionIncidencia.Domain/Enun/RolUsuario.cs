@@ -11,6 +11,7 @@ namespace Incidencias.Dominio.Enun
         
         Tecnico = 1,
         Docente= 2,
+        Alumno = 3
 
 
     }

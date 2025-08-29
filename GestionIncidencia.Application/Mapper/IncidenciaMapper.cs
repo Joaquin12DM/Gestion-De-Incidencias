@@ -4,12 +4,23 @@ using System.Linq;
 using GestionIncidencia.Application.DTO.Request;
 using GestionIncidencia.Application.DTO.Response;
 using Incidencias.Dominio.Entidades;
-using GestionIncidencia.Application.Mapper; // for AlumnoMapper
 
 namespace GestionIncidencia.Application.Mapper
 {
     public static class IncidenciaMapper
     {
+        private static readonly TimeZoneInfo _saPacific = ResolveSaPacific();
+
+        private static TimeZoneInfo ResolveSaPacific()
+        {
+            string[] ids = new[] { "SA Pacific Standard Time", "America/Bogota", "America/Lima" };
+            foreach (var id in ids)
+            {
+                try { return TimeZoneInfo.FindSystemTimeZoneById(id); } catch { }
+            }
+            return TimeZoneInfo.Utc;
+        }
+
         public static IncidenciaResponse ToResponse(Incidencia entidad) =>
             entidad == null
                 ? null
@@ -19,7 +30,7 @@ namespace GestionIncidencia.Application.Mapper
                     Descripcion = entidad.Descripcion,
                     Estado = entidad.Estado,
                     Tipo = entidad.Tipo,
-                    FechaCreacion = entidad.FechaCreacion,
+                    FechaCreacion = TimeZoneInfo.ConvertTimeFromUtc(DateTime.SpecifyKind(entidad.FechaCreacion, DateTimeKind.Utc), _saPacific),
                     UsuarioId = entidad.UsuarioId,
                     AlumnoId = entidad.AlumnoId,
                     Alumno = entidad.Alumno != null ? AlumnoMapper.ToResponse(entidad.Alumno) : null
@@ -36,7 +47,6 @@ namespace GestionIncidencia.Application.Mapper
                 Descripcion = dto.Descripcion,
                 Estado = string.IsNullOrWhiteSpace(dto.Estado) ? "Pendiente" : dto.Estado,
                 Tipo = string.IsNullOrWhiteSpace(dto.Tipo) ? "General" : dto.Tipo,
-                FechaCreacion = DateTime.Now,
                 UsuarioId = dto.UsuarioId,
                 AlumnoId = dto.AlumnoId
             };

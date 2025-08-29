@@ -11,7 +11,6 @@ namespace GestionIncidencia.Application.DTO.Response
         public DateTime FechaCreacion { get; set; }
         public int UsuarioId { get; set; }
         public int? AlumnoId { get; set; }
-        // Datos del alumno (si existe)
         public AlumnoResponse Alumno { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace Incidencias.Infraestructura.Data.Dbcontext
         {
             var optionsBuilder = new DbContextOptionsBuilder<IncidenciasDbContext>();
 
-            optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=GestionIncidencia;User ID=sad;Password=2612;Encrypt=False;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("");
 
             return new IncidenciasDbContext(optionsBuilder.Options);
         }

@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GestionIncidencia.Domain.Entidades;
 
 namespace Incidencias.Dominio.Entidades
@@ -13,13 +9,9 @@ namespace Incidencias.Dominio.Entidades
         public string Tipo { get; set; }
         public string Descripcion { get; set; }
         public string Estado { get; set; }
-        public DateTime FechaCreacion { get; set; } = DateTime.Now;
-
-        // Usuario (Docente / quien crea la incidencia)
+        public DateTime FechaCreacion { get; private set; } = DateTime.UtcNow;
         public int UsuarioId { get; set; }
         public Usuario Usuario { get; set; }
-
-        // Relación opcional con un Alumno
         public int? AlumnoId { get; set; }
         public Alumno Alumno { get; set; }
     }

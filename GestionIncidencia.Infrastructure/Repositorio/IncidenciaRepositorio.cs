@@ -65,7 +65,7 @@ namespace Incidencias.Infraestructura.Repositorio
         public async Task<IEnumerable<Incidencia>> ListarPorFechaCreacionAsync(DateTime fechaInicio, DateTime? fechaFin = null)
         {
             var fin = fechaFin ?? fechaInicio;
-            var inicioNorm = fechaInicio.Date;
+            var inicioNorm = fechaInicio;
             var finNorm = fin.Date.AddDays(1).AddTicks(-1);
             return await BaseQuery()
                 .Where(i => i.FechaCreacion >= inicioNorm && i.FechaCreacion <= finNorm)
